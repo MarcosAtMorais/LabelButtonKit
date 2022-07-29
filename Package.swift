@@ -5,6 +5,13 @@ import PackageDescription
 
 let package = Package(
     name: "VerticalLabelButton",
+    defaultLocalization: "en",
+    platforms: [
+      .iOS(.v15),
+      .macOS(.v12),
+      .watchOS(.v7),
+      .tvOS(.v14)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
