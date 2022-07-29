@@ -29,28 +29,19 @@ struct VerticalLabelButtonView: View {
             if needsLargerContent {
                 HStack {
                     Image(systemName: icon)
-                        .font(.system(.title2, design: .rounded))
-                        .imageScale(.small)
-                        .foregroundColor(color.opacity(colorOpacity))
+                        .stylizeIcon(using: color, opacity: colorOpacity)
                     Spacer().frame(maxWidth: 15)
                     Text(text)
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.primary)
-                        .lineLimit(2)
+                        .stylizeCaption()
                     Spacer()
                 }
             } else {
                 VStack {
                     Image(systemName: icon)
-                        .font(.system(.title2, design: .rounded))
-                        .imageScale(.medium)
-                        .foregroundColor(color.opacity(colorOpacity))
+                        .stylizeIcon(using: color, opacity: colorOpacity)
                     Spacer().frame(maxHeight: 5)
                     Text(text)
-                        .font(.system(.headline, design: .rounded))
-                        .foregroundColor(.primary)
-                        .minimumScaleFactor(0.25)
-                        .lineLimit(1)
+                        .stylizeCaption()
                 }
             }
             
@@ -63,6 +54,65 @@ struct VerticalLabelButtonView: View {
     }
 }
 
+struct StylizeIcon: ViewModifier {
+    
+    @State var color: Color = .primary
+    @State var colorOpacity: CGFloat = 0.75
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.system(.title2, design: .rounded))
+            .imageScale(.medium)
+            .foregroundColor(color.opacity(colorOpacity))
+    }
+    
+}
+
+struct AllSidesSpacer: ViewModifier {
+    
+    @State var horizontalPadding: CGFloat = 5
+    @State var verticalPadding: CGFloat = 5
+    
+    func body(content: Content) -> some View {
+        VStack {
+            Spacer(minLength: verticalPadding)
+            HStack {
+                Spacer(minLength: horizontalPadding)
+                content
+                Spacer(minLength: horizontalPadding)
+            }
+            Spacer(minLength: verticalPadding)
+        }
+    }
+    
+}
+
+struct StylizeCaption: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.system(.headline, design: .rounded))
+            .foregroundColor(.primary)
+            .minimumScaleFactor(0.25)
+            .lineLimit(1)
+    }
+    
+}
+
+extension View {
+    func stylizeIcon(using color: Color, opacity: CGFloat) -> some View {
+        modifier(StylizeIcon(color: color, colorOpacity: opacity))
+    }
+    
+    func stylizeCaption() -> some View {
+        modifier(StylizeCaption())
+    }
+    
+    func spaceAllSides(horizontalPadding: CGFloat = 5, verticalPadding: CGFloat = 5) -> some View {
+        modifier(AllSidesSpacer(horizontalPadding: horizontalPadding, verticalPadding: verticalPadding))
+    }
+}
+
 struct RoundedButtonStyle: ButtonStyle {
     
     var horizontalPadding: CGFloat = 10
@@ -71,15 +121,10 @@ struct RoundedButtonStyle: ButtonStyle {
     var cornerRadius: CGFloat = 12
     
     func makeBody(configuration: Configuration) -> some View {
-        VStack {
-            Spacer(minLength: verticalPadding)
-            HStack {
-                Spacer(minLength: horizontalPadding)
-                configuration.label
-                Spacer(minLength: horizontalPadding)
-            }
-            Spacer(minLength: verticalPadding)
-        }
+
+        configuration.label
+            .spaceAllSides()
+
 
         .padding([.top, .bottom], verticalPadding)
         .padding([.leading, .trailing], horizontalPadding)
