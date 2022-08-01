@@ -16,42 +16,21 @@ struct HorizontalStackExampleView: View {
     }
     
     var body: some View {
-        
+                
         if needsLargerContent {
             VStack(spacing: 5) {
-                VerticalLabelButtonView(icon: "pencil.circle.fill") {
-                    
-                }
-                
-                VerticalLabelButtonView {
-                    
-                }
-                
-                VerticalLabelButtonView {
-                    
-                }
-                
-                VerticalLabelButtonView {
-                    
-                }
+                VerticalLabelButtonView(label: ButtonLabel())
+                VerticalLabelButtonView(label: ButtonLabel())
+                VerticalLabelButtonView(label: ButtonLabel())
+                VerticalLabelButtonView(label: ButtonLabel())
+
             }
         } else {
             HStack(spacing: 5) {
-                VerticalLabelButtonView(icon: "pencil.circle.fill") {
-                    
-                }
-                
-                VerticalLabelButtonView(backgroundColor: .blue) {
-                    
-                }
-                
-                VerticalLabelButtonView {
-                    
-                }
-                
-                VerticalLabelButtonView {
-                    
-                }
+                VerticalLabelButtonView(label: ButtonLabel())
+                VerticalLabelButtonView(label: ButtonLabel())
+                VerticalLabelButtonView(label: ButtonLabel())
+                VerticalLabelButtonView(label: ButtonLabel())
             }
             .padding()
         }
@@ -63,9 +42,6 @@ struct HorizontalStackExampleView_Previews: PreviewProvider {
     static var previews: some View {
         HorizontalStackExampleView()
             .preferredColorScheme(.dark)
-            
-            
-            
-            
+            .environment(\.sizeCategory, .extraExtraLarge)
     }
 }
