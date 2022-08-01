@@ -37,13 +37,13 @@ struct LabelButtonListView: View {
         if !needsLargerContent {
             HStack(alignment: verticalAlignment, spacing: spacing) {
                 ForEach(data) { label in
-                    VerticalLabelButtonView(label: label)
+                    LabelButtonView(label: label)
                 }
             }
         } else {
             VStack(alignment: horizontalAlignment, spacing: spacing) {
                 ForEach(data) { label in
-                    VerticalLabelButtonView(label: label)
+                    LabelButtonView(label: label)
                 }
             }
         }

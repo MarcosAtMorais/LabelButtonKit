@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VerticalLabelButtonView: View {
+struct LabelButtonView: View {
     
     @Environment(\.sizeCategory) var sizeCategory
     
@@ -50,9 +50,9 @@ struct VerticalLabelButtonView: View {
     }
 }
 
-struct VerticalLabelButtonView_Previews: PreviewProvider {
+struct LabelButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        VerticalLabelButtonView(label: ButtonLabel())
+        LabelButtonView(label: ButtonLabel())
             .environment(\.sizeCategory, .large)
             
             
