@@ -22,8 +22,8 @@ struct RoundedButtonStyle: ButtonStyle {
         .padding([.top, .bottom], verticalPadding)
         .padding([.leading, .trailing], horizontalPadding)
         .background(backgroundColor.cornerRadius(cornerRadius))
-        .scaleEffect(configuration.isPressed ? 0.95 : 1)
-        .animation(.easeInOut(duration: 0.2), value: configuration.isPressed)
+        .scaleEffect(configuration.isPressed ? 0.98 : 1)
+        .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
     }
     
 }
