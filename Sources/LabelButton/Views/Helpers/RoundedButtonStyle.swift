@@ -8,16 +8,36 @@
 import SwiftUI
 import Foundation
 
+
+/**
+ ButtonStyle that applies a Rounded aspect, spaces all sides with padding, applies a background color and corner radius. It also animates with an .easeInOut property when pressed.
+ */
 struct RoundedButtonStyle: ButtonStyle {
     
+    /// horizontal padding that both .leading and .trailing are going to have.
     var horizontalPadding: CGFloat = 10
+    /// vertical padding that both .leading and .trailing are going to have.
     var verticalPadding: CGFloat = 5
+    /// color of the button's background.
     var backgroundColor: Color = Color.secondary.opacity(0.15)
+    /// cornerRadius of the button's background.
     var cornerRadius: CGFloat = 12
     
+    /**
+     Creates the body of the view
+     
+      - parameters:
+        - horizontalMinimumSpacing: the horizontal padding that both .leading and .trailing are going to have. It defaults at 10.
+        - verticalMinimumSpacing: the vertical padding that both .top and .bottom are going to have. It defaults at 5.
+        - backgroundColor: the color of the button's background. It defaults at Color.secondary.opacity(0.15).
+        - cornerRadius: the cornerRadius of the button's background. It defaults at 12.
+     
+      - returns: A view with the ViewModifier applied, with the font (.headline and rounded), minimumScaleFactor of 0.25 and the foregroundColor.
+
+     */
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .spaceAllSides()
+            .spaceAtAllSides()
 
         .padding([.top, .bottom], verticalPadding)
         .padding([.leading, .trailing], horizontalPadding)

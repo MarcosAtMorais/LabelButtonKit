@@ -9,28 +9,28 @@ import SwiftUI
 
 struct HorizontalStackExampleView: View {
     
-    @Environment(\.sizeCategory) var sizeCategory
+    @Environment(\.dynamicTypeSize) var sizeCategory
     
     var needsLargerContent: Bool {
-        sizeCategory > ContentSizeCategory.extraLarge
+        sizeCategory >= .xxLarge
     }
     
     var body: some View {
                 
         if needsLargerContent {
             VStack(spacing: 5) {
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
 
             }
         } else {
             HStack(spacing: 5) {
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
             }
             .padding()
         }
@@ -42,6 +42,6 @@ struct HorizontalStackExampleView_Previews: PreviewProvider {
     static var previews: some View {
         HorizontalStackExampleView()
             .preferredColorScheme(.dark)
-            .environment(\.sizeCategory, .extraExtraLarge)
+            .environment(\.sizeCategory, .extraLarge)
     }
 }
