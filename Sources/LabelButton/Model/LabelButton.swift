@@ -44,7 +44,7 @@ public class LabelButton: Labelable, Identifiable, ObservableObject {
     
     // MARK: - Initializers
     
-    public init(icon: String = String("arrow.triangle.turn.up.right.circle"), text: String = String("Directions"), textColor: Color = .primary, iconColor: Color = .primary, backgroundColor: Color = Color.secondary.opacity(0.15), colorOpacity: CGFloat = 0.75, cornerRadius: CGFloat = 12, horizontalPadding: CGFloat = 10, verticalPadding: CGFloat = 10, frame: CGSize = CGSize(width: 125, height: 75), action: @escaping () -> () = { }) {
+    public init(icon: String = String("arrow.triangle.turn.up.right.circle"), text: String = String(localized: "Directions"), textColor: Color = .primary, iconColor: Color = .primary, backgroundColor: Color = Color.secondary.opacity(0.15), colorOpacity: CGFloat = 0.75, cornerRadius: CGFloat = 12, horizontalPadding: CGFloat = 10, verticalPadding: CGFloat = 10, frame: CGSize = CGSize(width: 125, height: 75), action: @escaping () -> () = { }) {
         
         self.icon = icon
         self.text = text
