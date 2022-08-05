@@ -17,7 +17,7 @@
 - **Extra View Goodies**. This package also comes with some modifiers, components and views that you can freely use.
 - **Built Swifty** and with **lightweight** in mind.
 - **100% Swift**.
-- **Three simple examples** are included in the package. All leveraging SwiftUI's power**.
+- **Three simple examples** are included in the package. All leveraging **SwiftUI's power**.
 - **Documented** and **tested** (*views were tested with ViewInspector*).
 - **Some aspects of customization** include: Icon (SF Symbol string), Text, Text Color, Icon Color, Button Background Color, Color Opacity, Corner Radius, Vertical Padding, Horizontal Padding, Custom Frame and Actions.
 
