@@ -19,18 +19,18 @@ struct HorizontalStackExampleView: View {
                 
         if needsLargerContent {
             VStack(spacing: 5) {
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
 
             }
         } else {
             HStack(spacing: 5) {
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
-                LabelButtonView(label: ButtonLabel())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
+                LabelButtonView(label: LabelButton())
             }
             .padding()
         }

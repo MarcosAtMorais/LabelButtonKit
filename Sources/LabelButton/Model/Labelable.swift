@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 
+/**
+ The protocol that the ButtonLabel conforms
+ */
 protocol Labelable {
     
     var icon: String { get set }

@@ -37,7 +37,7 @@ struct RoundedButtonStyle: ButtonStyle {
      */
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .spaceAllSides()
+            .spaceAtAllSides()
 
         .padding([.top, .bottom], verticalPadding)
         .padding([.leading, .trailing], horizontalPadding)

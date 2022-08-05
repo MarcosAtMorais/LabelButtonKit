@@ -13,10 +13,10 @@ struct ListExampleView: View {
             .padding([.leading, .trailing], 10)
     }
     
-    private func createLabels() -> [ButtonLabel] {
-        let labelOne = ButtonLabel(textColor: .accentColor, iconColor: .accentColor, backgroundColor: .accentColor.opacity(0.15))
-        let labelTwo = ButtonLabel(text: "Sparks")
-        let labelThree = ButtonLabel()
+    private func createLabels() -> [LabelButton] {
+        let labelOne = LabelButton(textColor: .accentColor, iconColor: .accentColor, backgroundColor: .accentColor.opacity(0.15))
+        let labelTwo = LabelButton(text: "Sparks")
+        let labelThree = LabelButton()
         
         return [labelOne, labelTwo, labelThree, labelOne]
     }
