@@ -1,8 +1,8 @@
 <p align="center">
-  <img width="350" height="322" src="https://www.marcostmorais.com/labelbutton/cover2.png">
+  <img src="https://www.marcostmorais.com/labelbutton/cover2.png">
 </p>
 <p align="center">
-    <img width="591" height="158" src="https://www.marcostmorais.com/labelbutton/cover.png">
+    <img src="https://www.marcostmorais.com/labelbutton/cover.png">
 </p>
 
 ![Swift Version](https://img.shields.io/badge/Swift-5.5-F16D39.svg?style=flat) ![Dependency frameworks](https://img.shields.io/badge/Supports-_Swift_Package_Manager-F16D39.svg?style=flat) [![Twitter](https://img.shields.io/badge/twitter-@marcostmorais-blue.svg?style=flat)](https://twitter.com/marcostmorais) ![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20iPadOS-blue)
@@ -97,11 +97,11 @@ This package also includes several **SwiftUI views that display the types, color
 LabelButtonKit also comes with several scenes that you can learn from for how to use types. Such as these and many others:
 
 <p align="center">
-  <img width="400" height="731" src="https://www.marcostmorais.com/labelbutton/example1.png">
-  <img width="400" height="731" src="https://www.marcostmorais.com/labelbutton/example2.png">
-  <img width="400" height="731" src="https://www.marcostmorais.com/labelbutton/example3.png">
-  <img width="400" height="731" src="https://www.marcostmorais.com/labelbutton/example4.png">
-  <img width="400" height="731" src="https://www.marcostmorais.com/labelbutton/example5.png">
+  <img src="https://www.marcostmorais.com/labelbutton/example1.png">
+  <img src="https://www.marcostmorais.com/labelbutton/example2.png">
+  <img src="https://www.marcostmorais.com/labelbutton/example3.png">
+  <img src="https://www.marcostmorais.com/labelbutton/example4.png">
+  <img src="https://www.marcostmorais.com/labelbutton/example5.png">
   <img src="https://www.marcostmorais.com/labelbutton/example6.png">
 
 </p>
