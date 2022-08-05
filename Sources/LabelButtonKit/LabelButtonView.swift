@@ -13,7 +13,6 @@ import SwiftUI
 public struct LabelButtonView: View {
     
     // MARK: - Properties
-    
     /// The environment object containing the SizeCategory for DynamicType/accessibility purposes
     @Environment(\.dynamicTypeSize) var sizeCategory
 
@@ -31,13 +30,11 @@ public struct LabelButtonView: View {
     }
     
     // MARK: - Initializer
-    
     public init(label: LabelButton) {
         self._label = StateObject(wrappedValue: label)
     }
     
     // MARK: - View
-    
     public var body: some View {
         Button(action: label.action) {
             if needsLargerContent {

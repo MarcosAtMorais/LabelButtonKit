@@ -13,7 +13,6 @@ import SwiftUI
 public struct LabelButtonListView: View {
     
     // MARK: - Properties
-    
     /// The environment object containing the SizeCategory for DynamicType/accessibility purposes
     @Environment(\.dynamicTypeSize) var sizeCategory
     
@@ -32,7 +31,6 @@ public struct LabelButtonListView: View {
     }
     
     // MARK: - Initializer
-    
     /**
      An inlinable public init for this view. Creates a SwiftUIView that consists of a container with LabelButtons.
      - parameters:
@@ -54,7 +52,6 @@ public struct LabelButtonListView: View {
     }
     
     // MARK: - View
-    
     public var body: some View {
         // Verifies if it doesn't need the larger content. If it doesn't, creates an HStack. If so, creates a VStack.
         if !needsLargerContent {

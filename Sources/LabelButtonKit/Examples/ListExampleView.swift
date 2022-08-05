@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct ListExampleView: View {
     
-    // MARK: Properties
+    // MARK: - Properties
     /// Example of changing the value of some variable
     @State var result: Int = 0
     /// Example of linking a color to the backgroundColor of the LabelButton
@@ -26,6 +26,7 @@ public struct ListExampleView: View {
         self._labelButtonExample = StateObject(wrappedValue: labelButtonExample)
     }
     
+    // MARK: - View
     public var body: some View {
         VStack {
             LabelButtonListView(data: buttons)
@@ -39,6 +40,7 @@ public struct ListExampleView: View {
         }
     }
     
+    // MARK: - Auxiliary Methods
     private func createLabels() {
         
         /// Creates the first label

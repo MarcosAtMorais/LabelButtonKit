@@ -12,7 +12,7 @@ import SwiftUI
  */
 public struct SimpleListExampleView: View {
     
-    // MARK: Properties
+    // MARK: - Properties
     @State var labelButtons: [LabelButton] = [LabelButton(backgroundColor: .purple.opacity(0.50)), LabelButton(), LabelButton()]
     
     // MARK: - Initializer

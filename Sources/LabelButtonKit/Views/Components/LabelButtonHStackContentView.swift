@@ -21,7 +21,6 @@ struct LabelButtonHStackContentView: View {
     @Binding var colorOpacity: CGFloat
     
     // MARK: - Initializer
-    
     public init(icon: Binding<String>, text: Binding<String>, iconColor: Binding<Color>, textColor: Binding<Color>, colorOpacity: Binding<CGFloat>) {
         self._icon = icon
         self._text = text
