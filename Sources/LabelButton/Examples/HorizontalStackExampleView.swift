@@ -9,10 +9,10 @@ import SwiftUI
 
 struct HorizontalStackExampleView: View {
     
-    @Environment(\.sizeCategory) var sizeCategory
+    @Environment(\.dynamicTypeSize) var sizeCategory
     
     var needsLargerContent: Bool {
-        sizeCategory > ContentSizeCategory.extraLarge
+        sizeCategory >= .xxLarge
     }
     
     var body: some View {
@@ -42,6 +42,6 @@ struct HorizontalStackExampleView_Previews: PreviewProvider {
     static var previews: some View {
         HorizontalStackExampleView()
             .preferredColorScheme(.dark)
-            .environment(\.sizeCategory, .extraExtraLarge)
+            .environment(\.sizeCategory, .extraLarge)
     }
 }

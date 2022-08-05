@@ -33,6 +33,10 @@ public class LabelButton: Labelable, Identifiable, ObservableObject {
     @Published var colorOpacity: CGFloat
     /// The button's cornerRadius.
     @Published var cornerRadius: CGFloat
+    /// The button's [.leading, .trailing] padding.
+    @Published var horizontalPadding: CGFloat
+    /// The button's [.top, .bottom] padding.
+    @Published var verticalPadding: CGFloat
     /// The frame (width and height) of our button
     @Published var frame: CGSize
     /// A callback that can be used as the action for the pressing of our button
@@ -40,7 +44,7 @@ public class LabelButton: Labelable, Identifiable, ObservableObject {
     
     // MARK: - Initializers
     
-    public init(icon: String = String("arrow.triangle.turn.up.right.circle"), text: String = String("Directions"), textColor: Color = .primary, iconColor: Color = .primary, backgroundColor: Color = Color.secondary.opacity(0.15), colorOpacity: CGFloat = 0.75, cornerRadius: CGFloat = 12, frame: CGSize = CGSize(width: 125, height: 75), action: @escaping () -> () = { }) {
+    public init(icon: String = String("arrow.triangle.turn.up.right.circle"), text: String = String("Directions"), textColor: Color = .primary, iconColor: Color = .primary, backgroundColor: Color = Color.secondary.opacity(0.15), colorOpacity: CGFloat = 0.75, cornerRadius: CGFloat = 12, horizontalPadding: CGFloat = 10, verticalPadding: CGFloat = 10, frame: CGSize = CGSize(width: 125, height: 75), action: @escaping () -> () = { }) {
         
         self.icon = icon
         self.text = text
@@ -49,6 +53,8 @@ public class LabelButton: Labelable, Identifiable, ObservableObject {
         self.backgroundColor = backgroundColor
         self.colorOpacity = colorOpacity
         self.cornerRadius = cornerRadius
+        self.horizontalPadding = horizontalPadding
+        self.verticalPadding = verticalPadding
         self.frame = frame
         self.action = action
         

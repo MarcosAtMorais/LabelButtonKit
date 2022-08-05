@@ -13,8 +13,8 @@ import SwiftUI
 public struct LabelButtonView: View {
     
     /// The environment object containing the SizeCategory for DynamicType/accessibility purposes
-    @Environment(\.sizeCategory) var sizeCategory
-    
+    @Environment(\.dynamicTypeSize) var sizeCategory
+
     /// An object conforming to the Labelable protocol, containing everything needed to build this View
     @StateObject var label: LabelButton
     
@@ -25,7 +25,7 @@ public struct LabelButtonView: View {
     
     /// A computed property that verifies if the label must be vertical or horizontal according to DynamicType
     var needsLargerContent: Bool {
-        sizeCategory > ContentSizeCategory.extraLarge
+        sizeCategory >= .xxLarge
     }
     
     public var body: some View {
@@ -36,7 +36,7 @@ public struct LabelButtonView: View {
                 LabelButtonVStackContentView(icon: $label.icon, text: $label.text, iconColor: $label.iconColor, textColor: $label.textColor, colorOpacity: $label.colorOpacity)
             }
         }
-        .buttonStyle(RoundedButtonStyle(horizontalPadding: 5, backgroundColor: label.backgroundColor, cornerRadius: label.cornerRadius))
+        .buttonStyle(RoundedButtonStyle(horizontalPadding: label.horizontalPadding, verticalPadding: label.verticalPadding, backgroundColor: label.backgroundColor, cornerRadius: label.cornerRadius))
         .frame(maxWidth: .infinity, maxHeight: label.frame.height)
     }
 }
@@ -44,7 +44,8 @@ public struct LabelButtonView: View {
 struct LabelButtonView_Previews: PreviewProvider {
     static var previews: some View {
         LabelButtonView(label: LabelButton())
-            .environment(\.sizeCategory, .large)
+            .environment(\.sizeCategory, .extraLarge)
+            .previewInterfaceOrientation(.portraitUpsideDown)
             
             
     }

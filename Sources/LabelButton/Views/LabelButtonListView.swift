@@ -13,7 +13,7 @@ import SwiftUI
 public struct LabelButtonListView: View {
     
     /// The environment object containing the SizeCategory for DynamicType/accessibility purposes
-    @Environment(\.sizeCategory) var sizeCategory
+    @Environment(\.dynamicTypeSize) var sizeCategory
     
     /// The vertical alignment for the HStack, if needed
     public var verticalAlignment: VerticalAlignment = .center
@@ -46,7 +46,7 @@ public struct LabelButtonListView: View {
     
     /// A computed property that verifies if the label must be vertical or horizontal according to DynamicType
     var needsLargerContent: Bool {
-        sizeCategory > ContentSizeCategory.extraLarge
+        sizeCategory >= .xxLarge
     }
     
     public var body: some View {

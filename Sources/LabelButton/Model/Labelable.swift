@@ -20,6 +20,8 @@ protocol Labelable {
     var backgroundColor: Color { get set }
     var colorOpacity: CGFloat { get set }
     var cornerRadius: CGFloat { get set }
+    var verticalPadding: CGFloat { get set }
+    var horizontalPadding: CGFloat { get set }
     var frame: CGSize { get set }
     var action: () -> () { get set }
     

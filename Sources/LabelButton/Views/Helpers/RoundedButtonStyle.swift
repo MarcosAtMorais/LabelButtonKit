@@ -27,10 +27,10 @@ struct RoundedButtonStyle: ButtonStyle {
      Creates the body of the view
      
       - parameters:
-        - horizontalMinimumSpacing: the horizontal padding that both .leading and .trailing are going to have.
-        - verticalMinimumSpacing: the vertical padding that both .top and .bottom are going to have.
-        - backgroundColor: the color of the button's background.
-        - cornerRadius: the cornerRadius of the button's background.
+        - horizontalMinimumSpacing: the horizontal padding that both .leading and .trailing are going to have. It defaults at 10.
+        - verticalMinimumSpacing: the vertical padding that both .top and .bottom are going to have. It defaults at 5.
+        - backgroundColor: the color of the button's background. It defaults at Color.secondary.opacity(0.15).
+        - cornerRadius: the cornerRadius of the button's background. It defaults at 12.
      
       - returns: A view with the ViewModifier applied, with the font (.headline and rounded), minimumScaleFactor of 0.25 and the foregroundColor.
 
