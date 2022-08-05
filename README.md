@@ -23,7 +23,7 @@
 
 ## 🚀 Get Started
 
-### Using TypeEffectivenessKit in Production Code
+### Using LabelButtonKit in Production Code
 Just **import LabelButtonKit**:
 
 ```swift
