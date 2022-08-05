@@ -103,7 +103,6 @@ LabelButtonKit also comes with several scenes that you can learn from for how to
   <img src="https://www.marcostmorais.com/labelbutton/example4.png">
   <img src="https://www.marcostmorais.com/labelbutton/example5.png">
   <img src="https://www.marcostmorais.com/labelbutton/example6.png">
-
 </p>
 
 All examples are located on the Examples folder.
