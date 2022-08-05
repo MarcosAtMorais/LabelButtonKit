@@ -7,7 +7,7 @@
 
 import XCTest
 import SwiftUI
-@testable import LabelButton
+@testable import LabelButtonKit
 
 final class LabelButtonTests: XCTestCase {
     

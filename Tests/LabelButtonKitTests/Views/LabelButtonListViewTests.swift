@@ -7,7 +7,7 @@
 
 import XCTest
 import ViewInspector
-@testable import LabelButton
+@testable import LabelButtonKit
 
 class LabelButtonListViewTests: XCTestCase {
     

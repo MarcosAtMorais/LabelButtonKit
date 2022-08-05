@@ -18,6 +18,7 @@ struct SimpleListExampleView: View {
         LabelButtonListView(data: labelButtons)
             .padding()
     }
+    
 }
 
 struct SimpleListExampleView_Previews: PreviewProvider {
