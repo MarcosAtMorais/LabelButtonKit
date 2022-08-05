@@ -11,8 +11,12 @@ import ViewInspector
 
 class LabelButtonListViewTests: XCTestCase {
     
+    // MARK: Properties
+
     var sut: LabelButtonListView!
     var labelButton: LabelButton!
+    
+    // MARK: Setup
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -26,6 +30,8 @@ class LabelButtonListViewTests: XCTestCase {
         self.sut = nil
     }
     
+    // MARK: Initializers Tests
+
     func test_init_shouldHaveAtLeastOneButton() {
         
         let count = sut.data.count
@@ -59,6 +65,8 @@ class LabelButtonListViewTests: XCTestCase {
         XCTAssertFalse(hasLabelButton)
         
     }
+    
+    // MARK: Adding Labels Tests
     
     func test_whenAddingMoreLabelButtons_shouldSucceed() throws {
         

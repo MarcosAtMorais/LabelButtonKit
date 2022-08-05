@@ -6,9 +6,13 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import LabelButton
 
 final class LabelButtonTests: XCTestCase {
+    
+    // MARK: Initializers Tests
+    
     func test_init_whenDefaultInitializer_shouldSucceed() {
         
         let sut = LabelButton()
@@ -24,6 +28,17 @@ final class LabelButtonTests: XCTestCase {
         let expected = String(localized: "Direction")
         
         XCTAssertNotEqual(sut.text, expected)
+        
+    }
+    
+    // MARK: Icon Tests
+    
+    func test_icon_whenHavingAnIconTextCreatingAnImage_shouldSucceed() {
+        
+        let sut = LabelButton()
+        let image = Image(systemName: sut.icon)
+        
+        XCTAssertNotNil(image)
         
     }
 }

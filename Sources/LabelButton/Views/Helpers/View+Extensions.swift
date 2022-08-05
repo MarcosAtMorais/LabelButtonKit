@@ -29,7 +29,7 @@ extension View {
          - color: a foregroundColor that is going to be applied to the source (text or symbol).
          - opacity: a CGFloat that will be used as the opacity.
      
-      - returns: A view with the ViewModifier applied, with the font (.caption and rounded), imageScaling of .medium, the color as the foregroundColor and the opacity.
+      - returns: A view with the ViewModifier applied, with the font (.title and rounded), imageScaling of .large, the color as the foregroundColor and the opacity.
 
      */
     func stylizeIcon(using color: Color, opacity: CGFloat) -> some View {

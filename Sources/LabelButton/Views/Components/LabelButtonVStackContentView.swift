@@ -21,8 +21,13 @@ struct LabelButtonVStackContentView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: icon)
-                .stylizeIcon(using: iconColor, opacity: colorOpacity)
+            Rectangle()
+                .foregroundColor(.clear)
+                .frame(maxWidth: 35, maxHeight: 35)
+                .overlay {
+                    Image(systemName: icon)
+                        .stylizeIcon(using: iconColor, opacity: colorOpacity)
+                }
             Spacer().frame(maxHeight: 5)
             Text(text)
                 .stylizeCaption(using: textColor)

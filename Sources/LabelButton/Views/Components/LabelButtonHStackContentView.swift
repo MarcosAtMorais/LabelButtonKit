@@ -21,9 +21,15 @@ struct LabelButtonHStackContentView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: icon)
-                .stylizeIcon(using: iconColor, opacity: colorOpacity)
-            Spacer().frame(maxWidth: 15)
+            Spacer().frame(maxWidth: 5)
+            Rectangle()
+                .foregroundColor(.clear)
+                .frame(maxWidth: 35, maxHeight: 35)
+                .overlay {
+                    Image(systemName: icon)
+                        .stylizeIcon(using: iconColor, opacity: colorOpacity)
+                }
+            Spacer().frame(maxWidth: 18.5)
             Text(text)
                 .stylizeCaption(using: textColor)
             Spacer()
