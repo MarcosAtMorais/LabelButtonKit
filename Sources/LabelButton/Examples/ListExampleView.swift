@@ -66,7 +66,6 @@ struct ListExampleView: View {
 struct ListExampleView_Previews: PreviewProvider {
     static var previews: some View {
         ListExampleView()
-            
-            
+            .preferredColorScheme(.dark)
     }
 }

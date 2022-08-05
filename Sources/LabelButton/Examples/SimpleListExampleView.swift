@@ -24,6 +24,6 @@ struct SimpleListExampleView_Previews: PreviewProvider {
     static var previews: some View {
         SimpleListExampleView()
             .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }
