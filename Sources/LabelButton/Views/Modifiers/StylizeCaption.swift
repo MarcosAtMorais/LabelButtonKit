@@ -1,22 +1,26 @@
 //
-//  SwiftUIView.swift
+//  StylizeCaption.swift
 //  
 //
-//  Created by Marcos Morais on 01/08/22.
+//  Created by Marcos Morais on 03/08/22.
 //
 
+import Foundation
 import SwiftUI
 
+/**
+ Simple styling with font (as .caption, rounded design and a bold aspect), minimumScaleFactor for dynamicType when applicable and a foregroundColor for the text/symbol.
+ */
 struct StylizeCaption: ViewModifier {
     
-    @State var color: Color = .primary
+    /// Color of the given text/symbol.
+    @State var color: Color
     
     func body(content: Content) -> some View {
         content
-            .font(.system(.headline, design: .rounded))
-            .foregroundColor(color)
+            .font(.system(.caption, design: .rounded).bold())
             .minimumScaleFactor(0.25)
-            .lineLimit(1)
+            .foregroundColor(color)
     }
     
 }
