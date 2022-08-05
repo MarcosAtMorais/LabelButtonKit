@@ -20,9 +20,9 @@ public struct LabelButtonListView: View {
     /// The horizontal alignment for the VStack, if needed
     public var horizontalAlignment: HorizontalAlignment = .center
     /// The spacing in between elements of the stack
-    public let spacing: CGFloat?
+    public var spacing: CGFloat?
     /// Our source of truth
-    public let data: [LabelButton]
+    public var data: [LabelButton]
     
     /**
      An inlinable public init for this view. Creates a SwiftUIView that consists of a container with LabelButtons.

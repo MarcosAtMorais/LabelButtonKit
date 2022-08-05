@@ -10,26 +10,41 @@ import SwiftUI
 /**
  This struct conforms to Labelable and can be used to populate our buttons with the correct data.
  */
-public struct LabelButton: Labelable, Identifiable {
+public class LabelButton: Labelable, Identifiable, ObservableObject {
     
     /// The Identifiable protocol conformance
     public var id: String = UUID().uuidString
     
+    public static var `default` = LabelButton()
+    
     /// The icon consists of the string for the desired SFSymbol
-    var icon: String = String("square.and.arrow.down.fill")
+    @Published var icon: String = String("square.and.arrow.down.fill")
     /// The text consists of a string that will be displayed on top or right of the icon.
-    var text: String = String("Directions")
+    @Published var text: String = String("Directions")
     /// The color for our text
-    var textColor: Color = .primary
+    @Published var textColor: Color = .primary
     /// The color for our symbol
-    var iconColor: Color = .primary
+    @Published var iconColor: Color = .primary
     /// The backgroundColor for our button
-    var backgroundColor: Color = Color.secondary.opacity(0.15)
+    @Published var backgroundColor: Color = Color.secondary.opacity(0.15)
     /// The color opacity for our button as a whole
-    var colorOpacity: CGFloat = 0.75
+    @Published var colorOpacity: CGFloat = 0.75
     /// The frame (width and height) of our button
-    var frame: CGSize = CGSize(width: 125, height: 75)
+    @Published var frame: CGSize = CGSize(width: 125, height: 75)
     /// A callback that can be used as the action for the pressing of our button
-    var action: () -> () = { }
+    @Published var action: () -> ()
+    
+    public init(icon: String = String("arrow.triangle.turn.up.right.circle"), text: String = String("Directions"), textColor: Color = .primary, iconColor: Color = .primary, backgroundColor: Color = Color.secondary.opacity(0.15), colorOpacity: CGFloat = 0.75, frame: CGSize = CGSize(width: 125, height: 75), action: @escaping () -> () = { }) {
+        
+        self.icon = icon
+        self.text = text
+        self.textColor = textColor
+        self.iconColor = iconColor
+        self.backgroundColor = backgroundColor
+        self.colorOpacity = colorOpacity
+        self.frame = frame
+        self.action = action
+        
+    }
     
 }

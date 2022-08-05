@@ -10,13 +10,13 @@ import SwiftUI
 /**
  A SwiftUI view that consists of a viewable layer for LabelButton. It is fully compatible with Accessibility aspects. Always with a SFSymbol on top or leading the label text.
  */
-struct LabelButtonView: View {
+public struct LabelButtonView: View {
     
     /// The environment object containing the SizeCategory for DynamicType/accessibility purposes
     @Environment(\.sizeCategory) var sizeCategory
     
     /// An object conforming to the Labelable protocol, containing everything needed to build this View
-    @State var label: Labelable
+    @StateObject var label: LabelButton
     
     /// A callback that mirrors the label 'action' callback.
     var action: () -> () {
@@ -28,28 +28,13 @@ struct LabelButtonView: View {
         sizeCategory > ContentSizeCategory.extraLarge
     }
     
-    var body: some View {
+    public var body: some View {
         Button(action: label.action) {
-            
             if needsLargerContent {
-                HStack {
-                    Image(systemName: label.icon)
-                        .stylizeIcon(using: label.iconColor, opacity: label.colorOpacity)
-                    Spacer().frame(maxWidth: 15)
-                    Text(label.text)
-                        .stylizeCaption(using: label.textColor)
-                    Spacer()
-                }
+                LabelButtonHStackContentView(icon: $label.icon, text: $label.text, iconColor: $label.iconColor, textColor: $label.textColor, colorOpacity: $label.colorOpacity)
             } else {
-                VStack {
-                    Image(systemName: label.icon)
-                        .stylizeIcon(using: label.iconColor, opacity: label.colorOpacity)
-                    Spacer().frame(maxHeight: 5)
-                    Text(label.text)
-                        .stylizeCaption(using: label.textColor)
-                }
+                LabelButtonVStackContentView(icon: $label.icon, text: $label.text, iconColor: $label.iconColor, textColor: $label.textColor, colorOpacity: $label.colorOpacity)
             }
-            
         }
         .buttonStyle(RoundedButtonStyle(horizontalPadding: 5, backgroundColor: label.backgroundColor))
         .frame(maxWidth: .infinity, maxHeight: label.frame.height)
