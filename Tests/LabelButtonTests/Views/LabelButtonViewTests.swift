@@ -138,6 +138,8 @@ class LabelButtonViewTests: XCTestCase {
     
 }
 
+// MARK: Extensions
+
 extension LabelButtonView: Inspectable { }
 
 extension LabelButtonHStackContentView: Inspectable { }
