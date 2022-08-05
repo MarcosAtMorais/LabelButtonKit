@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A SwiftUI view container that houses a horizontal LabelButtonView.
+ */
 struct LabelButtonHStackContentView: View {
     
     /// Binding to the Label on LabelButtonView

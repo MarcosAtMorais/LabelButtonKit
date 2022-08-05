@@ -19,6 +19,7 @@ protocol Labelable {
     var iconColor: Color { get set }
     var backgroundColor: Color { get set }
     var colorOpacity: CGFloat { get set }
+    var cornerRadius: CGFloat { get set }
     var frame: CGSize { get set }
     var action: () -> () { get set }
     

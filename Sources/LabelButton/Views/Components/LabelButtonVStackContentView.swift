@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A SwiftUI view container that houses a vertical LabelButtonView. (For extraLarge+ dynamic type accessibility)
+ */
 struct LabelButtonVStackContentView: View {
     
     /// Binding to the Label on LabelButtonView

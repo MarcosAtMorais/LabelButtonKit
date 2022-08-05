@@ -36,7 +36,7 @@ public struct LabelButtonView: View {
                 LabelButtonVStackContentView(icon: $label.icon, text: $label.text, iconColor: $label.iconColor, textColor: $label.textColor, colorOpacity: $label.colorOpacity)
             }
         }
-        .buttonStyle(RoundedButtonStyle(horizontalPadding: 5, backgroundColor: label.backgroundColor))
+        .buttonStyle(RoundedButtonStyle(horizontalPadding: 5, backgroundColor: label.backgroundColor, cornerRadius: label.cornerRadius))
         .frame(maxWidth: .infinity, maxHeight: label.frame.height)
     }
 }
