@@ -1,11 +1,11 @@
-![Swift Version](https://img.shields.io/badge/Swift-5.5-F16D39.svg?style=flat) ![Dependency frameworks](https://img.shields.io/badge/Supports-_Swift_Package_Manager-F16D39.svg?style=flat) [![Twitter](https://img.shields.io/badge/twitter-@marcostmorais-blue.svg?style=flat)](https://twitter.com/marcostmorais) ![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20iPadOS-blue)
-
 <p align="center">
   <img width="350" height="322" src="https://www.marcostmorais.com/labelbutton/cover2.png">
 </p>
 <p align="center">
     <img width="591" height="158" src="https://www.marcostmorais.com/labelbutton/cover.png">
 </p>
+
+![Swift Version](https://img.shields.io/badge/Swift-5.5-F16D39.svg?style=flat) ![Dependency frameworks](https://img.shields.io/badge/Supports-_Swift_Package_Manager-F16D39.svg?style=flat) [![Twitter](https://img.shields.io/badge/twitter-@marcostmorais-blue.svg?style=flat)](https://twitter.com/marcostmorais) ![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20iPadOS-blue)
 
 **LabelButtonKit** is a mini library for labeled buttons (of **SF Symbols**), written entirely in SwiftUI. With LabelButtonKit, you'll be able to easily create fully customizable buttons that come with vertical labels as default. But that's not everything. LabelButtonKit fully supports Dynamic Type and transforms the buttons as the Dynamic Type selection increases. Everything adapts and it's shown correctly to your users.
 
