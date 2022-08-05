@@ -12,17 +12,26 @@ import SwiftUI
  */
 public struct LabelButtonListView: View {
     
+    // MARK: - Properties
+    
     /// The environment object containing the SizeCategory for DynamicType/accessibility purposes
     @Environment(\.dynamicTypeSize) var sizeCategory
     
     /// The vertical alignment for the HStack, if needed
-    public var verticalAlignment: VerticalAlignment = .center
+    @State public var verticalAlignment: VerticalAlignment = .center
     /// The horizontal alignment for the VStack, if needed
-    public var horizontalAlignment: HorizontalAlignment = .center
+    @State public var horizontalAlignment: HorizontalAlignment = .center
     /// The spacing in between elements of the stack
-    public var spacing: CGFloat?
+    @State public var spacing: CGFloat? = nil
     /// Our source of truth
-    public var data: [LabelButton]
+    public var data: [LabelButton] = []
+    
+    /// A computed property that verifies if the label must be vertical or horizontal according to DynamicType
+    var needsLargerContent: Bool {
+        sizeCategory >= .xxLarge || data.count > 5
+    }
+    
+    // MARK: - Initializer
     
     /**
      An inlinable public init for this view. Creates a SwiftUIView that consists of a container with LabelButtons.
@@ -44,10 +53,7 @@ public struct LabelButtonListView: View {
         self.data = data
     }
     
-    /// A computed property that verifies if the label must be vertical or horizontal according to DynamicType
-    var needsLargerContent: Bool {
-        sizeCategory >= .xxLarge
-    }
+    // MARK: - View
     
     public var body: some View {
         // Verifies if it doesn't need the larger content. If it doesn't, creates an HStack. If so, creates a VStack.

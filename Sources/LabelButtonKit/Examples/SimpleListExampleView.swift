@@ -10,11 +10,18 @@ import SwiftUI
 /**
  A SwiftUI view with a very simple example using an array of LabelButtons and the container LabelButtonListView.
  */
-struct SimpleListExampleView: View {
+public struct SimpleListExampleView: View {
     
+    // MARK: Properties
     @State var labelButtons: [LabelButton] = [LabelButton(backgroundColor: .purple.opacity(0.50)), LabelButton(), LabelButton()]
     
-    var body: some View {
+    // MARK: - Initializer
+    public init(labelButtons: [LabelButton] = [LabelButton(backgroundColor: .purple.opacity(0.50)), LabelButton(), LabelButton()]) {
+        self.labelButtons = labelButtons
+    }
+    
+    // MARK: - View
+    public var body: some View {
         LabelButtonListView(data: labelButtons)
             .padding()
     }

@@ -12,6 +12,7 @@ import SwiftUI
  */
 struct LabelButtonHStackContentView: View {
     
+    //MARK: - Properties
     /// Binding to the Label on LabelButtonView
     @Binding var icon: String
     @Binding var text: String
@@ -19,6 +20,17 @@ struct LabelButtonHStackContentView: View {
     @Binding var textColor: Color
     @Binding var colorOpacity: CGFloat
     
+    // MARK: - Initializer
+    
+    public init(icon: Binding<String>, text: Binding<String>, iconColor: Binding<Color>, textColor: Binding<Color>, colorOpacity: Binding<CGFloat>) {
+        self._icon = icon
+        self._text = text
+        self._iconColor = iconColor
+        self._textColor = textColor
+        self._colorOpacity = colorOpacity
+    }
+    
+    // MARK: - View
     var body: some View {
         HStack {
             Spacer().frame(maxWidth: 5)

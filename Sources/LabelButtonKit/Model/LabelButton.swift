@@ -20,27 +20,27 @@ public class LabelButton: Labelable, Identifiable, ObservableObject {
     public static var `default` = LabelButton()
     
     /// The icon consists of the string for the desired SFSymbol
-    @Published var icon: String
+    @Published public var icon: String
     /// The text consists of a string that will be displayed on top or right of the icon.
-    @Published var text: String
+    @Published public var text: String
     /// The color for our text
-    @Published var textColor: Color
+    @Published public var textColor: Color
     /// The color for our symbol
-    @Published var iconColor: Color
+    @Published public var iconColor: Color
     /// The backgroundColor for our button
-    @Published var backgroundColor: Color
+    @Published public var backgroundColor: Color
     /// The color opacity for our button as a whole
-    @Published var colorOpacity: CGFloat
+    @Published public var colorOpacity: CGFloat
     /// The button's cornerRadius.
-    @Published var cornerRadius: CGFloat
+    @Published public var cornerRadius: CGFloat
     /// The button's [.leading, .trailing] padding.
-    @Published var horizontalPadding: CGFloat
+    @Published public var horizontalPadding: CGFloat
     /// The button's [.top, .bottom] padding.
-    @Published var verticalPadding: CGFloat
+    @Published public var verticalPadding: CGFloat
     /// The frame (width and height) of our button
-    @Published var frame: CGSize
+    @Published public var frame: CGSize
     /// A callback that can be used as the action for the pressing of our button
-    @Published var action: () -> ()
+    @Published public var action: () -> ()
     
     // MARK: - Initializers
     

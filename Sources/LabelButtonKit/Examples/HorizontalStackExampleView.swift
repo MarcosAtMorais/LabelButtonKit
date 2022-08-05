@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct HorizontalStackExampleView: View {
+public struct HorizontalStackExampleView: View {
+    
+    // MARK: Properties
     
     /// This example uses the sizeCategory (dynamicTypeSize) just to show that it can be used outside the LabelButtonListView. LabelButtons already adjust accordingly.
     @Environment(\.dynamicTypeSize) var sizeCategory
@@ -16,7 +18,8 @@ struct HorizontalStackExampleView: View {
         sizeCategory >= .xxLarge
     }
     
-    var body: some View {
+    // MARK: - View
+    public var body: some View {
                 
         if needsLargerContent {
             VStack(spacing: 5) {
@@ -41,8 +44,5 @@ struct HorizontalStackExampleView: View {
 struct HorizontalStackExampleView_Previews: PreviewProvider {
     static var previews: some View {
         HorizontalStackExampleView()
-            
-            
-            
     }
 }

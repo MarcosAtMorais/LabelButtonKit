@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct ListExampleView: View {
+public struct ListExampleView: View {
     
+    // MARK: Properties
     /// Example of changing the value of some variable
     @State var result: Int = 0
     /// Example of linking a color to the backgroundColor of the LabelButton
@@ -17,20 +18,28 @@ struct ListExampleView: View {
     /// An example LabelButton
     @StateObject var labelButtonExample: LabelButton = LabelButton.default
     
-    var body: some View {
+    /// An Example Array of LabelButtons
+    @State var buttons: [LabelButton] = []
+    
+    //MARK: - Initializer
+    public init(labelButtonExample: LabelButton = LabelButton.default) {
+        self._labelButtonExample = StateObject(wrappedValue: labelButtonExample)
+    }
+    
+    public var body: some View {
         VStack {
-            LabelButtonListView(data: createLabels())
+            LabelButtonListView(data: buttons)
                 .padding([.leading, .trailing], 10)
             Text("\(result)")
                 .font(.callout.weight(.bold))
-                .hidden()
         }
         .onAppear {
+            self.createLabels()
             self.assignAnActionAfterCreated()
         }
     }
     
-    private func createLabels() -> [LabelButton] {
+    private func createLabels() {
         
         /// Creates the first label
         let labelOne = LabelButton(icon: "text.bubble.fill", text: "Translate", textColor: .accentColor, iconColor: .accentColor, backgroundColor: .accentColor.opacity(0.15))
@@ -44,23 +53,25 @@ struct ListExampleView: View {
             self.result += 1
         }
         
-        /// Returns the array
-        return [labelOne, labelTwo, labelThree, self.labelButtonExample]
+        /// Adds buttons to the array passed to the List
+        self.buttons.append(contentsOf: [labelOne, labelTwo, labelThree, labelButtonExample])
     }
     
     private func assignAnActionAfterCreated() {
-        /// Uses the example one and attributes an action after being created
+        /// Uses the example one and attributes an action after being created, changes color and adds a new button
         self.labelButtonExample.action = {
-            self.changeBgColorDirectly()
+            withAnimation {
+                self.changeBgColorDirectly()
+                self.buttons.append(LabelButton())
+            }
         }
     }
     
     /// Changes the backgroundColor of the button to pink, animated.
     private func changeBgColorDirectly() {
-        withAnimation {
-            self.labelButtonExample.backgroundColor = .pink
-        }
+        self.labelButtonExample.backgroundColor = .pink
     }
+    
 }
 
 struct ListExampleView_Previews: PreviewProvider {
